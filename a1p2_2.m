@@ -9,3 +9,6 @@ cvx_end
 scatter(data(:,1),data(:,2))
 hold on
 plot(data(:,1), [data(:,1), ones(n,1)]*x)
+title('CVX')
+xlabel('Height')
+ylabel('Weight')
