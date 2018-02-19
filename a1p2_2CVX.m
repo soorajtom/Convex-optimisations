@@ -1,3 +1,4 @@
+%Problem 2 optimization with cvx
 data = load("heightweight.txt");
 [n, m] = size(data)
 

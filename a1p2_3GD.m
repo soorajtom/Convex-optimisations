@@ -1,3 +1,5 @@
+%optimising problem 2 with gradient descent.
+tic;
 data = load("heightweight.txt");
 [n, m] = size(data);
 H = data(:,1);
@@ -41,3 +43,4 @@ plot(H, X*w)
 title('Gradient Descent')
 xlabel('Height')
 ylabel('Weight')
+toc;

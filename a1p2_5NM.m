@@ -1,3 +1,5 @@
+%optimising problem 2 with Newton's method.
+tic;
 data = load("heightweight.txt");
 [n, m] = size(data);
 H = data(:,1);
@@ -5,25 +7,18 @@ W = data(:,2);
 X = [H, ones(n,1)];
 t = 1
 lim = 1000
-wo = [0; 0];
 w = [rand;rand];
-
-d = -(X' * W);
-obj = W - X*wo;
-points = [wo(1); wo(2); norm(obj)];
+points = [w(1); w(2); norm(W - X*w)];
 
 for i = 1:lim
-    dold = d;
     d = inv(X' * X) * X' * (X*w - W);
-%     t = ((w - wo)' * (d - dold)) / ((norm(d - dold))^2);
-    wo = w;
     w = w - t * d;
     
     nobj = W - X*w;
     diff = nobj - obj;
     obj = nobj;
     
-    newpoint = [wo(1); wo(2); norm(obj)];
+    newpoint = [w(1); w(2); norm(obj)];
     points = [points newpoint];
     
     if norm(diff) < 1e-8
@@ -43,3 +38,5 @@ zlabel('Cost function')
 % title('Newton''s Method')
 % xlabel('Height')
 % ylabel('Weight')
+size(points)
+toc;

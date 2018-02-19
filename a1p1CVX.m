@@ -1,3 +1,4 @@
+%Problem 1 optimization with cvx
 cvx_begin
     C = zeros(8,8);
     C(1,2) = 6;
@@ -15,7 +16,7 @@ cvx_begin
     variable f(8,8)
     maximize sum(f(1,:))
     subject to
-        for i = 2:7
+        for i = 2:7      %excluding source and destination vertex
             sum(f(:,i)) == sum(f(i,:));
         end
         for i = 1:8
