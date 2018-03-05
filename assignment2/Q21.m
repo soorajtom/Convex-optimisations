@@ -1,0 +1,21 @@
+x = linspace(0,100,100);
+y = 2.*x.*x + 36.*x + 4;
+xc = linspace(36, 136, 100);
+c = (xc.*xc) / 8 - 9.*xc + 158;
+cc = 2.*x.*x + 36.*x + 4;
+
+subplot(1,3,1);
+plot(x, y, 'r');
+title('f(x) = 2x^2 + 36x + 4');
+xlabel('x');
+ylabel('f');
+subplot(1,3,2);
+plot(xc, c, 'g');
+title('Conjugate of f(x)');
+xlabel('y');
+ylabel('f');
+subplot(1,3,3);
+plot(x, cc, 'b');
+title('Conjugate of conjugate of f(x)');
+xlabel('y');
+ylabel('f');

@@ -1,0 +1,21 @@
+x = linspace(0,100,100);
+y = -1 .* log(x);
+xc = linspace(-100, -1, 99);
+c = -1 + log(-1 .* (1./xc));
+cc = -1 .* log(x);
+
+subplot(1,3,1);
+plot(x, y, 'r');
+title('f(x) = -log(x)');
+xlabel('x');
+ylabel('f');
+subplot(1,3,2);
+plot(xc, c, 'g');
+title('Conjugate of f(x)');
+xlabel('y');
+ylabel('f');
+subplot(1,3,3);
+plot(x, cc, 'b');
+title('Conjugate of conjugate of f(x)');
+xlabel('y');
+ylabel('f');
